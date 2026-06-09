@@ -1367,17 +1367,6 @@ function printAdminReport() {
 }
 
 // ===================== EVENT LISTENERS & INITIALIZATION =====================
-document.addEventListener('DOMContentLoaded', () => {
-    if (navigator.permissions) {
-        navigator.permissions.query({
-            name: 'geolocation'
-        }).then(result => {
-            if(result.state === 'prompt'){
-                getLocation();
-            }
-        });
-    }
-});
    
 setInterval(updateClock, 1000);
 updateClock();
