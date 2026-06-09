@@ -579,7 +579,7 @@ const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyVdrqDBJOuo1dd
 
 const defaultConfig = {
     app_title: 'Presensi Praktik Kerja Industri',
-    school_name: 'SMK NEGERI 1 NGLIPAR',
+    school_name: 'Pondok Indah, Jakarta Selatan',
     footer_text: '©Moidea-Lybra 2026',
     background_color: '#f0f4f8',
     surface_color: '#ffffff',
@@ -1231,7 +1231,7 @@ function shareWhatsApp() {
         nomor = '62' + nomor.substring(1);
     }
 
-    const pesan = encodeURIComponent(`Selamat, Anda sudah bisa melaksanakan Praktik Kerja Lapangan.\n\nBerikut kode login Presensi PKL Anda:\n\n*${code}*\n\nSilakan login pada aplikasi Presensi PKL menggunakan kode tersebut.\n\nSMKN 1 Nglipar`);
+    const pesan = encodeURIComponent(`Selamat, Anda sudah bisa melaksanakan Praktik Kerja Lapangan.\n\nBerikut kode login Presensi PKL Anda:\n\n*${code}*\n\nSilakan login pada aplikasi Presensi PKL menggunakan kode tersebut.\n\nPondok Indah, Jakarta Selatan`);
     window.open(`https://wa.me/${nomor}?text=${pesan}`, '_blank');
 }
 
