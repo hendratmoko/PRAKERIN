@@ -115,8 +115,7 @@
     .dark-mode .tab-btn.active { background: #2563eb; color: white; }
 
     .fade-in { animation: fadeIn 0.4s ease; }
-
-@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     
     .input-field { width: 100%; padding: 10px 14px; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 14px; transition: all 0.3s; outline: none; background: white; }
     .input-field:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
@@ -223,7 +222,7 @@
         .print-content { page-break-inside: avoid; }
     }
 
-@page {
+    @page {
         size: A4 portrait;
         margin: 15mm;
     }
@@ -290,8 +289,7 @@
       <div id="date-display" class="text-xs font-medium text-gray-500 dark:text-slate-400 mt-1"></div>
      </div>
      <div id="days-remaining" class="text-xs font-bold text-blue-700 bg-blue-50 dark:bg-blue-950/50 dark:text-blue-300 px-4 py-2 rounded-full border border-blue-100 dark:border-blue-900"></div>
-
-</div>
+    </div>
    </div>
    <div class="card mb-4 no-print">
     <h3 class="font-bold text-blue-950 dark:text-white text-sm mb-4 flex items-center gap-2"><i data-lucide="clipboard-check" class="w-5 h-5 text-blue-600"></i> Form Presensi</h3>
@@ -331,8 +329,7 @@
     <div id="print-area" style="display:none;">
      <div class="print-kop">
       <table style="width:100%; border:none; margin-bottom:10px;">
-
-<tbody>
+       <tbody>
         <tr>
          <td style="width:80px; text-align:center; border:none; vertical-align:middle;"><img src="LOGO NGLIPAR.png" style="width:70px; height:70px; object-fit:contain;" onerror="this.style.background='#e5e7eb';"></td>
          <td style="border:none; text-align:center; padding-left:20px;">
@@ -377,12 +374,12 @@
        <div style="text-align:center; width:40%;">
         <p style="font-size:10px; margin:0; font-weight:bold;">Pembimbing Industri</p>
         <div style="height:60px; margin-top:10px;"></div>
-        <p style="font-size:10px; margin:0; border-top:1px solid #333; padding-top:8px; font-weight:bold;" id="print-mentor-name">_____</p>
+        <p style="font-size:10px; margin:0; border-top:1px solid #333; padding-top:8px; font-weight:bold;" id="print-mentor-name">_________________________</p>
        </div>
        <div style="text-align:center; width:40%;">
         <p style="font-size:10px; margin:0; font-weight:bold;">Peserta PKL</p>
         <div style="height:60px; margin-top:10px;"></div>
-        <p style="font-size:10px; margin:0; border-top:1px solid #333; padding-top:8px; font-weight:bold;" id="print-student-name">_____</p>
+        <p style="font-size:10px; margin:0; border-top:1px solid #333; padding-top:8px; font-weight:bold;" id="print-student-name">_________________________</p>
        </div>
       </div>
      </div>
@@ -405,13 +402,12 @@
       <div style="text-align:center">
        <p style="font-size:12px">Pembimbing Industri</p>
        <div style="height:60px"></div>
-       <p style="font-size:12px;border-top:1px solid #333;padding-top:4px">________</p>
-
-</div>
+       <p style="font-size:12px;border-top:1px solid #333;padding-top:4px">________________________</p>
+      </div>
       <div style="text-align:center">
        <p style="font-size:12px">Peserta PKL</p>
        <div style="height:60px"></div>
-       <p style="font-size:12px;border-top:1px solid #333;padding-top:4px" id="print-signature-name">________</p>
+       <p style="font-size:12px;border-top:1px solid #333;padding-top:4px" id="print-signature-name">________________________</p>
       </div>
      </div>
     </div>
@@ -444,8 +440,7 @@
      </div>
      <div>
       <label class="block text-xs font-semibold text-gray-600 dark:text-slate-300 mb-1">Koordinat GPS Perusahaan</label> <input id="admin-koordinat" class="input-field mb-2" placeholder="Lat, Lng (contoh: -7.927,110.615)">
-
-<div id="company-map" class="border border-slate-200 dark:border-slate-700 shadow-inner" style="height:200px; border-radius:12px; overflow:hidden;"></div>
+      <div id="company-map" class="border border-slate-200 dark:border-slate-700 shadow-inner" style="height:200px; border-radius:12px; overflow:hidden;"></div>
      </div>
      <div>
       <label class="block text-xs font-semibold text-gray-600 dark:text-slate-300 mb-1">Nomor BPJS</label> <input id="admin-bpjs" class="input-field" placeholder="Nomor BPJS Kesehatan">
@@ -504,8 +499,7 @@
           <div style="font-size:10px; color:#666;">
            Daerah Istimewa Yogyakarta 55881
           </div></td>
-
-</tr>
+        </tr>
        </tbody>
       </table>
       <hr style="border: 2px solid #1e3a5f; margin: 10px 0;">
@@ -541,7 +535,7 @@
        <div style="text-align:center; width:30%;">
         <p style="font-size:10px; margin:0; font-weight:bold;">Pembimbing Industri</p>
         <div style="height:50px; margin-top:10px;"></div>
-        <p style="font-size:10px; margin:0; border-top:1px solid #333; padding-top:8px;">_____</p>
+        <p style="font-size:10px; margin:0; border-top:1px solid #333; padding-top:8px;">_________________________</p>
        </div>
        <div style="text-align:center; width:30%;">
         <p style="font-size:10px; margin:0; font-weight:bold;">Kepala Sekolah</p>
@@ -576,8 +570,7 @@
     </div>
     <div class="flex flex-wrap justify-between items-center gap-2 mb-3 no-print mt-3">
      <button onclick="printAdminReport()" class="btn-3d btn-3d-primary"> <i data-lucide="printer"></i> Cetak Laporan </button> <button onclick="askResetAllData()" class="btn-3d btn-3d-danger"> <i data-lucide="trash-2"></i> Hapus Semua Data </button>
-
-</div>
+    </div>
    </div>
    <p class="text-center text-gray-400 text-xs mt-8 mb-6">©Moidea-Lybra 2026</p>
    <script>
@@ -656,7 +649,7 @@ async function searchCompanyLocation() {
     }
     try {
         showToast('Mencari lokasi...');
-        const response = await fetch(https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(company)});
+        const response = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(company)}`);
         const data = await response.json();
         if (!data.length) {
             showToast('Lokasi tidak ditemukan', 'error');
@@ -665,7 +658,7 @@ async function searchCompanyLocation() {
         const result = data[0];
         const lat = parseFloat(result.lat);
         const lon = parseFloat(result.lon);
-        document.getElementById('admin-koordinat').value = ${lat}, ${lon};
+        document.getElementById('admin-koordinat').value = `${lat}, ${lon}`;
         companyMap.setView([lat, lon], 17);
         if (companyMarker) {
             companyMap.removeLayer(companyMarker);
@@ -682,7 +675,7 @@ async function searchCompanyLocation() {
 function showToast(message, type = 'success') {
     const container = document.getElementById('toast-container');
     const toast = document.createElement('div');
-    toast.className = toast toast-${type};
+    toast.className = `toast toast-${type}`;
     toast.textContent = message;
     container.appendChild(toast);
     setTimeout(() => toast.remove(), 3500);
@@ -699,8 +692,8 @@ function generateCode() {
 
 function getPesertaList() { return JSON.parse(localStorage.getItem('pkl_peserta') || '[]'); }
 function savePesertaList(list) { localStorage.setItem('pkl_peserta', JSON.stringify(list)); }
-function getHistory(code) { return JSON.parse(localStorage.getItem(pkl_history_${code}) || '[]'); }
-function saveHistory(code, history) { localStorage.setItem(pkl_history_${code}, JSON.stringify(history)); }
+function getHistory(code) { return JSON.parse(localStorage.getItem(`pkl_history_${code}`) || '[]'); }
+function saveHistory(code, history) { localStorage.setItem(`pkl_history_${code}`, JSON.stringify(history)); }
 
 const ADMIN_CODE = 'AAA000';
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyVdrqDBJOuo1ddyWPO0PEmr_6s4haq7qsgKBl_9ixdMSFrYjb2cfd_9wI1Pvc4gB-mSQ/exec';
@@ -767,12 +760,12 @@ function updateClock() {
     const months = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
     
     document.getElementById('clock').textContent = now.toLocaleTimeString('id-ID');
-    document.getElementById('date-display').textContent = ${days[now.getDay()]}, ${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()};
+    document.getElementById('date-display').textContent = `${days[now.getDay()]}, ${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}`;
     
     if (currentUser) {
         const endDate = new Date(currentUser.selesai);
         const diff = Math.ceil((endDate - now) / (1000*60*60*24));
-        document.getElementById('days-remaining').textContent = diff > 0 ? Sisa ${diff} hari PKL : 'PKL telah selesai';
+        document.getElementById('days-remaining').textContent = diff > 0 ? `Sisa ${diff} hari PKL` : 'PKL telah selesai';
     }
 }
 
@@ -796,7 +789,7 @@ async function handleLogin() {
         return;
     }
 
-showToast('Memeriksa kode...');
+    showToast('Memeriksa kode...');
     const pesertaSpreadsheet = await getKodeFromSpreadsheet();
     const peserta = pesertaSpreadsheet.find(p => p.code === code);
     
@@ -808,8 +801,8 @@ showToast('Memeriksa kode...');
 
     currentUser = peserta;
     isAdmin = false;
-    document.getElementById('user-info').textContent = ${peserta.nama} | ${peserta.kelas} | ${peserta.perusahaan};
-    showToast(Selamat datang ${peserta.nama});
+    document.getElementById('user-info').textContent = `${peserta.nama} | ${peserta.kelas} | ${peserta.perusahaan}`;
+    showToast(`Selamat datang ${peserta.nama}`);
     showPage('dashboard');
     renderHistory();
     checkAttendanceState();
@@ -837,7 +830,7 @@ function showPage(page) {
     document.getElementById('page-login').classList.add('hidden');
     document.getElementById('page-dashboard').classList.add('hidden');
     document.getElementById('page-admin').classList.add('hidden');
-    document.getElementById(page-${page}).classList.remove('hidden');
+    document.getElementById(`page-${page}`).classList.remove('hidden');
     
     if (page === 'dashboard') {
         document.getElementById('btn-masuk').style.display = 'inline-flex';
@@ -898,9 +891,8 @@ function getLocation() {
     navigator.geolocation.getCurrentPosition(
         (pos) => {
             currentGPS = { lat: pos.coords.latitude, lng: pos.coords.longitude };
-            document.getElementById('gps-status').innerHTML = <span class="text-green-600 font-bold">✓ ${currentGPS.lat.toFixed(6)}, ${currentGPS.lng.toFixed(6)}</span>;
-
-showToast('Lokasi berhasil didapat');
+            document.getElementById('gps-status').innerHTML = `<span class="text-green-600 font-bold">✓ ${currentGPS.lat.toFixed(6)}, ${currentGPS.lng.toFixed(6)}</span>`;
+            showToast('Lokasi berhasil didapat');
         },
         (err) => {
             document.getElementById('gps-status').textContent = 'Gagal melacak lokasi: ' + err.message;
@@ -919,12 +911,12 @@ function checkDistance(lat1, lon1, lat2, lon2) {
 }
 
 function calculateDistanceText(companyGPS, studentGPS) {
-    if (!companyGPS ⠞⠟⠟⠟⠺⠺⠵⠟⠞⠟⠵⠺⠺ companyGPS === '-' || studentGPS === '-') return '-';
+    if (!companyGPS || !studentGPS || companyGPS === '-' || studentGPS === '-') return '-';
     try {
         const company = companyGPS.split(',');
         const student = studentGPS.split(',');
         const distance = checkDistance(parseFloat(company[0]), parseFloat(company[1]), parseFloat(student[0]), parseFloat(student[1]));
-        return distance < 1000 ? ${Math.round(distance)} meter : ${(distance / 1000).toFixed(2)} km;
+        return distance < 1000 ? `${Math.round(distance)} meter` : `${(distance / 1000).toFixed(2)} km`;
     } catch(err) {
         return '-';
     }
@@ -975,7 +967,7 @@ function validatePresensi() {
         if (compLat && compLng) {
             const dist = checkDistance(currentGPS.lat, currentGPS.lng, compLat, compLng);
             if (dist > 100) {
-                showModal('Lokasi Tidak Sesuai', Anda berada ${Math.round(dist)} meter dari area kantor. Jarak maksimal yang diperbolehkan adalah 100 meter.);
+                showModal('Lokasi Tidak Sesuai', `Anda berada ${Math.round(dist)} meter dari area kantor. Jarak maksimal yang diperbolehkan adalah 100 meter.`);
                 return false;
             }
         }
@@ -985,8 +977,8 @@ function validatePresensi() {
 
 function absenMasuk() {
     if (!validatePresensi()) return;
-
-let jarak = 0;
+    
+    let jarak = 0;
     if (currentUser.koordinat) {
         const [compLat, compLng] = currentUser.koordinat.split(',').map(Number);
         jarak = Math.round(checkDistance(currentGPS.lat, currentGPS.lng, compLat, compLng));
@@ -996,7 +988,7 @@ let jarak = 0;
         date: new Date().toLocaleDateString('id-ID'),
         time: new Date().toLocaleTimeString('id-ID'),
         status: 'Masuk',
-        gps: ${currentGPS.lat.toFixed(6)}, ${currentGPS.lng.toFixed(6)},
+        gps: `${currentGPS.lat.toFixed(6)}, ${currentGPS.lng.toFixed(6)}`,
         photo: capturedPhotoData,
         kegiatan: ''
     };
@@ -1013,7 +1005,7 @@ let jarak = 0;
         hp: currentUser.hp,
         perusahaan: currentUser.perusahaan,
         koordinatPerusahaan: currentUser.koordinat,
-        koordinatPresensi: ${currentGPS.lat},${currentGPS.lng},
+        koordinatPresensi: `${currentGPS.lat},${currentGPS.lng}`,
         jarak: jarak + " meter", 
         status: 'Masuk',
         kegiatan: '-',
@@ -1070,7 +1062,7 @@ function submitKegiatan() {
 function absenPulang() {
     if (!validatePresensi()) return;
 
-    const koordinatPresensi = ${currentGPS.lat},${currentGPS.lng};
+    const koordinatPresensi = `${currentGPS.lat},${currentGPS.lng}`;
     const jarakText = calculateDistanceText(currentUser.koordinat, koordinatPresensi);
 
     const record = {
@@ -1094,8 +1086,7 @@ function absenPulang() {
         hp: currentUser.hp,
         perusahaan: currentUser.perusahaan,
         koordinatPerusahaan: currentUser.koordinat || '',
-
-koordinatPresensi: koordinatPresensi,
+        koordinatPresensi: koordinatPresensi,
         jarak: jarakText,
         status: 'Pulang',
         kegiatan: '-',
@@ -1129,7 +1120,7 @@ function submitIzin() {
         date: new Date().toLocaleDateString('id-ID'),
         time: new Date().toLocaleTimeString('id-ID'),    
         status: 'Izin',
-        gps: ${currentGPS.lat.toFixed(6)}, ${currentGPS.lng.toFixed(6)},    
+        gps: `${currentGPS.lat.toFixed(6)}, ${currentGPS.lng.toFixed(6)}`,    
         photo: null,
         kegiatan: keterangan
     };
@@ -1169,7 +1160,7 @@ function renderAdminTable(data) {
     tbody.innerHTML = '';
     data.forEach((item, index) => {
         const tr = document.createElement('tr');
-        tr.innerHTML = 
+        tr.innerHTML = `
         <td>${index + 1}</td>
         <td>${item.nama || '-'}</td>
         <td>${item.kelas || '-'}</td>
@@ -1186,7 +1177,7 @@ function renderAdminTable(data) {
             <button onclick="askResetPeserta('${item.code}')" class="text-orange-500 text-xs">Reset</button>
             <button onclick="askDeletePeserta('${item.code}')" class="text-red-500 text-xs ml-2">Hapus</button>
         </td>
-        ;
+        `;
         tbody.appendChild(tr);
     });
 }
@@ -1199,12 +1190,12 @@ function renderHistory() {
     history.slice().reverse().forEach(h => {
         const tr = document.createElement('tr');
         const statusColor = h.status === 'Masuk' ? 'text-green-600' : h.status === 'Pulang' ? 'text-blue-600' : 'text-amber-500';
-        tr.innerHTML = 
+        tr.innerHTML = `
             <td>${h.date} ${h.time}</td>
             <td><span class="font-bold ${statusColor}">${h.status}</span></td>
             <td class="max-w-[150px] truncate">${h.kegiatan || '-'}</td>
             <td class="text-xs font-mono">${h.gps}</td>
-        ;
+        `;
         tbody.appendChild(tr);
     });
 }
@@ -1216,20 +1207,20 @@ function printHistory() {
     
     history.forEach((h, index) => {
         const row = printBody.insertRow();
-        row.innerHTML = 
+        row.innerHTML = `
             <td style="border:1px solid #ddd; padding:8px; text-align:center;">${index + 1}</td>
             <td style="border:1px solid #ddd; padding:8px; text-align:center;">${h.date}</td>
             <td style="border:1px solid #ddd; padding:8px; text-align:center;">${h.time}</td>
             <td style="border:1px solid #ddd; padding:8px; text-align:center; font-weight:bold; color:#1e3a5f;">${h.status}</td>
             <td style="border:1px solid #ddd; padding:8px; text-align:left;">${h.kegiatan || '-'}</td>
             <td style="border:1px solid #ddd; padding:8px; text-align:center; font-size:9px; font-family:monospace;">${h.gps}</td>
-        ;
+        `;
     });
     
     document.getElementById('print-peserta-info').textContent = 
-        ${currentUser.nama} | ${currentUser.kelas} | ${currentUser.perusahaan};
-    document.getElementById('print-mentor-name').textContent = (${currentUser.perusahaan});
-    document.getElementById('print-student-name').textContent = (${currentUser.nama});
+        `${currentUser.nama} | ${currentUser.kelas} | ${currentUser.perusahaan}`;
+    document.getElementById('print-mentor-name').textContent = `(${currentUser.perusahaan})`;
+    document.getElementById('print-student-name').textContent = `(${currentUser.nama})`;
     
     document.getElementById('print-area').style.display = 'block';
     window.print();
@@ -1269,7 +1260,7 @@ function addPeserta() {
     const mulai = document.getElementById('admin-mulai').value;
     const selesai = document.getElementById('admin-selesai').value;
 
-    if (!nama ⠺⠵⠵⠟⠺⠟⠞⠺ !perusahaan ⠟⠞⠞⠺⠵⠵⠟⠟ !selesai) {
+    if (!nama || !kelas || !perusahaan || !mulai || !selesai) {
         showToast('Lengkapi semua data wajib', 'error');
         return;
     }
@@ -1302,7 +1293,7 @@ function addPeserta() {
     document.getElementById('generated-code').textContent = code;
     document.getElementById('generated-code').dataset.hp = hp;
     document.getElementById('generated-code-section').style.display = 'block';
-    showToast(Peserta ${nama} berhasil ditambahkan!);
+    showToast(`Peserta ${nama} berhasil ditambahkan!`);
 
     ['admin-nama', 'admin-kelas', 'admin-hp', 'admin-perusahaan', 'admin-koordinat', 'admin-bpjs', 'admin-mulai', 'admin-selesai'].forEach(id => {
         document.getElementById(id).value = '';
@@ -1321,7 +1312,7 @@ function deletePeserta(code) {
     let peserta = getPesertaList();
     peserta = peserta.filter(p => p.code !== code);
     savePesertaList(peserta);
-    localStorage.removeItem(pkl_history_${code});
+    localStorage.removeItem(`pkl_history_${code}`);
     renderAdminTable(peserta);
     showToast("Peserta berhasil dihapus");
 }
@@ -1335,7 +1326,7 @@ function askResetPeserta(code) {
 }
 
 function resetPeserta(code) {
-    localStorage.removeItem(pkl_history_${code});
+    localStorage.removeItem(`pkl_history_${code}`);
     renderAdminReport();
     showToast('Riwayat peserta berhasil direset');
 }
@@ -1378,8 +1369,8 @@ function shareWhatsApp() {
         nomor = '62' + nomor.substring(1);
     }
 
-    const pesan = encodeURIComponent(Selamat, Anda sudah bisa melaksanakan Praktik Kerja Lapangan.\n\nBerikut kode login Presensi PKL Anda:\n\n*${code}*\n\nSilakan login pada aplikasi Presensi PKL menggunakan kode tersebut.\n\nSMKN 1 Nglipar);
-    window.open(https://wa.me/${nomor}?text=${pesan}, '_blank');
+    const pesan = encodeURIComponent(`Selamat, Anda sudah bisa melaksanakan Praktik Kerja Lapangan.\n\nBerikut kode login Presensi PKL Anda:\n\n*${code}*\n\nSilakan login pada aplikasi Presensi PKL menggunakan kode tersebut.\n\nSMKN 1 Nglipar`);
+    window.open(`https://wa.me/${nomor}?text=${pesan}`, '_blank');
 }
 
 function renderAdminReport() {
@@ -1415,12 +1406,11 @@ function renderAdminReport() {
                     ${masukCount} hari
                 </span>
             </td>
-
-<td class="no-print">
+            <td class="no-print">
                 <button onclick="askResetPeserta('${p.code}')" class="text-orange-500 text-xs">Reset</button>
                 <button onclick="askDeletePeserta('${p.code}')" class="text-red-500 text-xs ml-2">Hapus</button>
             </td>
-        ;
+        `;
         tbody.appendChild(tr);
     });
 }
@@ -1434,7 +1424,7 @@ function printAdminReport() {
         const history = getHistory(p.code);
         const masukCount = history.filter(h => h.status === 'Masuk').length;
         const row = printBody.insertRow();
-        row.innerHTML = 
+        row.innerHTML = `
             <td style="border:1px solid #333; padding:6px; text-align:center;">${index + 1}</td>
             <td style="border:1px solid #333; padding:6px; text-align:left;">${p.nama}</td>
             <td style="border:1px solid #333; padding:6px; text-align:center;">${p.kelas}</td>
@@ -1442,13 +1432,13 @@ function printAdminReport() {
             <td style="border:1px solid #333; padding:6px; text-align:center;">${p.mulai}</td>
             <td style="border:1px solid #333; padding:6px; text-align:center;">${p.selesai}</td>
             <td style="border:1px solid #333; padding:6px; text-align:center; font-weight:bold;">${masukCount} hari</td>
-        ;
+        `;
     });
     
-    document.getElementById('print-admin-sign').textContent = (${document.getElementById('admin-ttd-nama').value});
-    document.getElementById('print-admin-nip-sign').textContent = NIP. ${document.getElementById('admin-ttd-nip').value};
-    document.getElementById('print-kepsek-sign').textContent = (${document.getElementById('kepsek-nama').value});
-    document.getElementById('print-kepsek-nip-sign').textContent = NIP. ${document.getElementById('kepsek-nip').value}`;
+    document.getElementById('print-admin-sign').textContent = `(${document.getElementById('admin-ttd-nama').value})`;
+    document.getElementById('print-admin-nip-sign').textContent = `NIP. ${document.getElementById('admin-ttd-nip').value}`;
+    document.getElementById('print-kepsek-sign').textContent = `(${document.getElementById('kepsek-nama').value})`;
+    document.getElementById('print-kepsek-nip-sign').textContent = `NIP. ${document.getElementById('kepsek-nip').value}`;
     
     document.getElementById('print-area-admin').style.display = 'block';
     window.print();
@@ -1476,5 +1466,5 @@ loginInput.addEventListener('input', () => {
 });
   </script>
   </div>
- <script>(function(){function c(){var b=a.contentDocument⠵⠟⠵⠟⠞⠞⠵⠟⠵⠺⠟⠞⠞⠟⠞⠟⠞⠞⠟⠵⠞⠵⠟⠟⠵⠵⠟⠟⠟⠵⠺⠞⠞⠵⠞⠺⠟⠺⠞⠺⠵⠺⠟⠞⠺⠞⠟⠞⠞⠺⠵⠵⠞⠞⠞⠞⠵⠺⠵⠟⠟⠺⠟⠞⠺⠺⠞⠺⠵⠞⠞⠵⠞⠺⠺⠟⠟⠞⠵⠵⠞⠟⠺⠞⠟⠺⠺⠺⠺⠺⠞⠵⠵⠟⠟⠵⠞⠟⠺⠺⠞⠺⠵⠟⠺⠞⠵⠟⠞⠞⠟⠺⠞⠞⠵⠵⠟⠵⠟⠺⠵⠺⠺⠺⠺⠵⠟⠵⠞⠵⠟⠺⠵⠵⠞⠟⠟⠺⠵⠺⠟⠞⠞⠟⠺⠺⠵⠺⠺⠵⠺⠟⠟⠞⠞⠞⠞⠞⠺⠟⠺⠟⠺⠺⠟⠵⠟⠺⠞⠞⠞⠺⠺⠵⠟⠞⠟⠺⠺⠵⠵⠺⠵⠟⠟⠟⠟⠞⠵⠵⠞⠵⠞⠞⠵⠞⠺⠵⠞⠟⠵⠟⠞⠺⠺⠵⠟⠞⠺⠵⠺⠵⠞⠺⠺⠞⠞⠺⠺⠟⠟⠟⠟⠟⠟⠺⠞⠞⠵⠵⠞⠞⠟⠟⠟⠞⠞⠵⠺⠺⠞⠺⠺⠺⠺⠺⠟⠺⠟⠺⠟⠺⠞⠟⠞⠺⠟⠺⠟⠺⠵⠟⠞⠞⠞⠟⠵⠞⠟⠟⠟⠺⠵⠺⠞⠟⠞⠞⠞⠵⠟⠞⠺⠵⠟⠵⠵⠞⠺⠞⠞⠞⠟⠞⠵⠞⠞⠺⠞⠺⠵⠟⠞⠟⠵⠟⠞⠟⠺⠺⠞⠟⠵⠞⠟⠞⠺⠺⠺⠵⠵⠟⠞⠺⠵⠞⠟⠟⠟⠺⠺⠟⠞⠺⠟⠞⠺⠺⠵⠵⠺⠵⠟⠟⠵⠵⠟⠞⠟⠵⠺⠟⠞⠵⠟⠵⠵⠵⠟⠞⠟⠟⠟⠺⠞⠟⠟⠞⠵⠞⠺⠟⠞⠵⠺⠞⠵⠵⠵⠟⠞⠞⠞⠵⠞⠵⠟⠞⠞⠺⠵⠟⠵⠵⠞⠞⠟⠞⠵⠺⠺⠺⠺⠺⠞⠺⠟⠵⠞⠟⠟⠺⠟⠺⠵⠞⠵⠵⠞⠵⠺⠞⠞⠺⠞⠟⠵⠟⠟⠵⠵⠟⠺⠺⠞⠺⠟⠟⠵⠟⠞⠺⠞⠞⠞⠟⠞⠵⠟⠞⠺⠟⠺⠵⠟⠺⠵⠺⠞⠺⠵⠟⠺⠵⠟⠟⠟⠟⠟⠵⠵⠵⠟⠟⠵⠞⠟⠵⠺⠵⠺⠟⠵⠵⠟⠺⠺⠺⠞⠵⠞⠵⠟⠟⠺⠵⠵⠵⠞⠟⠞⠺⠵⠞⠞⠵⠺⠺⠺⠞⠺⠺⠞⠺⠵⠺⠵⠺⠞⠟⠟⠺⠵⠺⠞⠵⠺⠟⠟⠵⠞⠵⠺⠟⠵⠵⠺⠺⠵⠵⠺⠞⠟⠺⠵⠵⠞⠵⠟⠵⠵⠟⠞⠺⠺⠟⠺⠟⠺⠺⠞⠺⠵⠺⠟⠟⠵⠞⠞⠟⠵⠟⠺⠟⠞⠟⠞⠟⠞⠺⠟⠟⠵⠵⠟⠵⠺⠟⠵⠺⠞⠟⠞⠟⠵⠵⠟⠞⠵⠺⠺⠟⠞⠟⠺⠵⠟⠟⠞⠟⠟⠵⠞⠟⠵⠺⠺⠺⠞⠺⠵⠵⠟⠵⠞⠺⠺⠟⠵⠺⠵⠺⠟⠟⠞⠞⠺⠺⠵⠟⠺⠟⠵⠵⠟⠺⠟⠞⠵⠞⠟⠵⠟⠟⠺⠵⠵⠺⠞⠟⠟⠟⠵⠵⠞⠵⠟⠞⠵⠺⠺⠞⠵⠞⠟⠵⠺⠵⠵⠞⠞⠺⠞⠵⠺⠟⠵⠞⠺⠞⠺⠟⠟⠺⠟⠵⠟⠟⠞⠞⠵⠟⠟⠟⠵⠞⠺⠞⠺⠟⠺⠵⠞⠺⠵⠺function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a07ebfe70f73fd38',t:'MTc4MDgyNTc5NQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
   </html>
