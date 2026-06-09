@@ -190,31 +190,43 @@
     .tab-btn.active { background: #1e3a5f; color: white; box-shadow: 0 4px 12px rgba(30,58,95,0.15); }
 
     @media print {
-        .no-print { display: none !important; }
-        body { background: white !important; }
-        body::before { display: none !important; }
-        body * { visibility: hidden; }
-        #print-area-admin, #print-area-admin * { visibility: visible; }
-        #print-area-admin {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            padding: 0;
-            margin: 0;
-            background: white;
+            .no-print { display: none !important; }
+            body { background: white !important; color: black !important; }
+            body::before { display: none !important; }
+            body * { visibility: hidden; }
+            #print-area-student, #print-area-student * { visibility: visible; }
+            #print-area-admin, #print-area-admin * { visibility: visible; }
+            #print-area-student {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: auto;
+                padding: 20mm;
+                margin: 0;
+                background: white;
+            }
+            #print-area-admin {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: auto;
+                padding: 20mm;
+                margin: 0;
+                background: white;
+            }
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
         }
-        * {
-            -webkit-print-color-adjust: exact !important;
-            print-color-adjust: exact !important;
-        }
-    }
 
-    @page {
-        size: A4 landscape;
-        margin: 10mm;
-    }
-       
+        @page {
+            size: A4 portrait;
+            margin: 15mm;
+        }
+  
   </style>
   <style>body { box-sizing: border-box; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
@@ -251,6 +263,7 @@
    </div>
    <p id="footer-text" class="text-gray-400 text-xs mt-6">©Moidea-Lybra 2026</p>
   </div>
+  
   <div id="page-dashboard" class="h-full hidden p-4 max-w-4xl mx-auto w-full fade-in">
    <div class="flex items-center justify-between mb-4 no-print">
     <div>
