@@ -1143,6 +1143,77 @@ function renderHistory() {
     });
 }
 
+// ==================== PRINT STUDENT ====================
+function printStudentReport() {
+    const mentorName = prompt('Masukkan nama Pembimbing Industri:', 'Pembimbing');
+    if (!mentorName) return;
+
+    if (!currentUser) return;
+    const history = getHistory(currentUser.code);
+
+    document.getElementById('print-nama').textContent = currentUser.nama;
+    document.getElementById('print-kelas').textContent = currentUser.kelas;
+    document.getElementById('print-perusahaan').textContent = currentUser.perusahaan;
+    document.getElementById('print-periode').textContent = `${currentUser.mulai} s/d ${currentUser.selesai}`;
+    document.getElementById('print-student-name').textContent = currentUser.nama;
+    document.getElementById('print-mentor-name').textContent = mentorName;
+
+    const tbody = document.getElementById('print-student-body');
+    tbody.innerHTML = '';
+    history.forEach((h, idx) => {
+        const tr = tbody.insertRow();
+        tr.innerHTML = `
+            <td style="border:1px solid #333; padding:4px; text-align:center;">${idx + 1}</td>
+            <td style="border:1px solid #333; padding:4px; text-align:center;">${h.date}</td>
+            <td style="border:1px solid #333; padding:4px; text-align:center;">${h.time}</td>
+            <td style="border:1px solid #333; padding:4px; text-align:center;">${h.status}</td>
+            <td style="border:1px solid #333; padding:4px; text-align:left;">${h.kegiatan || '-'}</td>
+            <td style="border:1px solid #333; padding:4px; text-align:center; font-size:8px;">${h.gps}</td>
+        `;
+    });
+
+    document.getElementById('print-area-student').style.display = 'block';
+    setTimeout(() => {
+        window.print();
+        document.getElementById('print-area-student').style.display = 'none';
+    }, 500);
+}
+
+// ==================== PRINT ADMIN ====================
+function printAdminReport() {
+    const list = getPesertaList();
+
+    const tbody = document.getElementById('print-admin-body');
+    tbody.innerHTML = '';
+    
+    list.forEach((peserta, idx) => {
+        const tr = tbody.insertRow();
+        tr.innerHTML = `
+            <td style="border:1px solid #333; padding:3px; text-align:center;">${idx + 1}</td>
+            <td style="border:1px solid #333; padding:3px; text-align:left;">${peserta.nama}</td>
+            <td style="border:1px solid #333; padding:3px; text-align:center;">${peserta.kelas}</td>
+            <td style="border:1px solid #333; padding:3px; text-align:center;">${peserta.hp}</td>
+            <td style="border:1px solid #333; padding:3px; text-align:left;">${peserta.perusahaan}</td>
+            <td style="border:1px solid #333; padding:3px; text-align:center; font-size:7px;">${peserta.koordinat || '-'}</td>
+            <td style="border:1px solid #333; padding:3px; text-align:center;">${peserta.code}</td>
+            <td style="border:1px solid #333; padding:3px; text-align:center;">${peserta.mulai}</td>
+            <td style="border:1px solid #333; padding:3px; text-align:center;">${peserta.selesai}</td>
+            <td style="border:1px solid #333; padding:3px; text-align:center;">PESERTA</td>
+            <td style="border:1px solid #333; padding:3px; text-align:center;">-</td>
+            <td style="border:1px solid #333; padding:3px; text-align:center;">-</td>
+            <td style="border:1px solid #333; padding:3px; text-align:center;">-</td>
+            <td style="border:1px solid #333; padding:3px; text-align:center;">-</td>
+        `;
+    });
+
+    document.getElementById('print-area-admin').style.display = 'block';
+    setTimeout(() => {
+        window.print();
+        document.getElementById('print-area-admin').style.display = 'none';
+    }, 500);
+}
+
+   
 function printHistory() {
     document.getElementById('print-header').style.display = 'block';
     document.getElementById('print-footer').style.display = 'block';
