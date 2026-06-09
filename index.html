@@ -1309,6 +1309,14 @@ function printAdminReport() {
         document.getElementById("admin-print-header").style.display = "none";
         document.getElementById("admin-print-footer").style.display = "none";
     }, 500);
+ const tableClone =
+document.getElementById("admin-table").cloneNode(true);
+
+tableClone.querySelectorAll(".no-print")
+.forEach(el=>el.remove());
+document.getElementById("print-table-container").innerHTML="";
+document.getElementById("print-table-container")
+.appendChild(tableClone);
 }
 
 // ===================== EVENT LISTENERS & INITIALIZATION =====================
