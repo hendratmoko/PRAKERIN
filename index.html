@@ -791,35 +791,19 @@ function getLocation() {
             document.getElementById('gps-status').innerHTML = `<span class="text-green-600 font-bold">✓ ${currentGPS.lat.toFixed(6)}, ${currentGPS.lng.toFixed(6)}</span>`;
             showToast('Lokasi berhasil didapat');
         },
-        (err) => {
-
-    let pesan = '';
-
-    switch(error.code){
-
-        case error.PERMISSION_DENIED:
-            pesan =
-            'Izin lokasi ditolak. Aktifkan izin lokasi pada browser.';
+        (err) => { let pesan = '';   switch(error.code)
+        {  case error.PERMISSION_DENIED:     
+          pesan =  'Izin lokasi ditolak. Aktifkan izin lokasi pada browser.';
+            break;  case error.POSITION_UNAVAILABLE:
+            pesan =   'Lokasi tidak tersedia. Aktifkan GPS perangkat.';
+            break;  case error.TIMEOUT:
+            pesan =    'Waktu pencarian lokasi habis. Coba lagi.';
             break;
-
-        case error.POSITION_UNAVAILABLE:
-            pesan =
-            'Lokasi tidak tersedia. Aktifkan GPS perangkat.';
-            break;
-
-        case error.TIMEOUT:
-            pesan =
-            'Waktu pencarian lokasi habis. Coba lagi.';
-            break;
-
-        default:
-            pesan =
-            'Terjadi kesalahan saat mengambil lokasi.';
-    }
-
+            default:
+            pesan =  'Terjadi kesalahan saat mengambil lokasi.';
+         }
     document.getElementById('gps-status').innerHTML =
         `<span style="color:red">${pesan}</span>`;
-
     showModal('GPS Bermasalah', pesan);
 }
         { enableHighAccuracy: true }
