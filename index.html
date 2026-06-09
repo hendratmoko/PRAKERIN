@@ -1098,15 +1098,23 @@ function renderHistory() {
 }
 
 function printHistory() {
-    document.getElementById('print-header').style.display = 'block';
-    document.getElementById('print-footer').style.display = 'block';
-    document.getElementById('print-user-info').textContent = `${currentUser.nama} | ${currentUser.kelas} | ${currentUser.perusahaan}`;
-    document.getElementById('print-signature-name').textContent = `(${currentUser.nama})`;
+
+    document.getElementById('print-header').style.display='block';
+    document.getElementById('print-footer').style.display='block';
+
+    document.getElementById('print-user-info').innerHTML =
+    `
+    Nama : ${currentUser.nama}<br>
+    Kelas : ${currentUser.kelas}<br>
+    DUDI : ${currentUser.perusahaan}
+    `;
+    document.getElementById('print-signature-name').textContent =
+    currentUser.nama;
     window.print();
-    setTimeout(() => {
-        document.getElementById('print-header').style.display = 'none';
-        document.getElementById('print-footer').style.display = 'none';
-    }, 500);
+    setTimeout(()=>{
+        document.getElementById('print-header').style.display='none';
+        document.getElementById('print-footer').style.display='none';
+    },500);
 }
 
 // ===================== PANEL KONTROL ADMIN =====================
