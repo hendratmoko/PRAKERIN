@@ -778,7 +778,7 @@ function stopCamera() {
         cameraStream = null;
     }
 }
-
+// ==================== GPS ====================
 function getLocation() {
     if (!navigator.geolocation) {
         showToast('GPS tidak didukung browser ini', 'error');
@@ -792,9 +792,36 @@ function getLocation() {
             showToast('Lokasi berhasil didapat');
         },
         (err) => {
-            document.getElementById('gps-status').textContent = 'Gagal melacak lokasi: ' + err.message;
-            showToast('Gagal mendapatkan lokasi', 'error');
-        },
+
+    let pesan = '';
+
+    switch(error.code){
+
+        case error.PERMISSION_DENIED:
+            pesan =
+            'Izin lokasi ditolak. Aktifkan izin lokasi pada browser.';
+            break;
+
+        case error.POSITION_UNAVAILABLE:
+            pesan =
+            'Lokasi tidak tersedia. Aktifkan GPS perangkat.';
+            break;
+
+        case error.TIMEOUT:
+            pesan =
+            'Waktu pencarian lokasi habis. Coba lagi.';
+            break;
+
+        default:
+            pesan =
+            'Terjadi kesalahan saat mengambil lokasi.';
+    }
+
+    document.getElementById('gps-status').innerHTML =
+        `<span style="color:red">${pesan}</span>`;
+
+    showModal('GPS Bermasalah', pesan);
+}
         { enableHighAccuracy: true }
     );
 }
