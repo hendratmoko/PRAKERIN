@@ -3,7 +3,7 @@
  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Presensi Praktik Kerja Industri - Jakarta Intercultural School</title>
+  <title>Presensi Praktik Kerja Industri - SMKN 1 Nglipar</title>
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
@@ -190,43 +190,31 @@
     .tab-btn.active { background: #1e3a5f; color: white; box-shadow: 0 4px 12px rgba(30,58,95,0.15); }
 
     @media print {
-            .no-print { display: none !important; }
-            body { background: white !important; color: black !important; }
-            body::before { display: none !important; }
-            body * { visibility: hidden; }
-            #print-area-student, #print-area-student * { visibility: visible; }
-            #print-area-admin, #print-area-admin * { visibility: visible; }
-            #print-area-student {
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: auto;
-                padding: 20mm;
-                margin: 0;
-                background: white;
-            }
-            #print-area-admin {
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: auto;
-                padding: 20mm;
-                margin: 0;
-                background: white;
-            }
-            * {
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
+        .no-print { display: none !important; }
+        body { background: white !important; }
+        body::before { display: none !important; }
+        body * { visibility: hidden; }
+        #print-area-admin, #print-area-admin * { visibility: visible; }
+        #print-area-admin {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            background: white;
         }
+        * {
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+    }
 
-        @page {
-            size: A4 portrait;
-            margin: 15mm;
-        }
-  
+    @page {
+        size: A4 landscape;
+        margin: 10mm;
+    }
+       
   </style>
   <style>body { box-sizing: border-box; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
@@ -252,22 +240,21 @@
   </div>
   <div id="page-login" class="h-full flex flex-col items-center justify-center p-4">
    <div class="card text-center max-w-sm w-full fade-in">
-    <div class="mx-auto mb-4"><img src="LOGO JIS.png" alt="LOGO" class="w-24 h-24 object-contain mx-auto drop-shadow-md" onerror="this.style.background='#e5e7eb'; this.alt='Logo unavailable';">
+    <div class="mx-auto mb-4"><img src="LOGO NGLIPAR.png" alt="LOGO" class="w-24 h-24 object-contain mx-auto drop-shadow-md" onerror="this.style.background='#e5e7eb'; this.alt='Logo unavailable';">
     </div>
     <h1 id="login-title" class="text-xl font-bold text-blue-900 dark:text-blue-400 mb-1">Presensi Praktik Kerja Industri</h1>
-    <p id="login-school" class="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-6 tracking-wide">Jakarta Intercultural School</p>
+    <p id="login-school" class="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-6 tracking-wide">SMK NEGERI 1 NGLIPAR</p>
     <div class="mb-4"><input id="login-code" type="text" maxlength="6" placeholder="INPUT KODE" class="input-field text-center text-xl font-bold tracking-widest uppercase text-blue-900">
     </div>
-    <div class="mt-4 pt-4 border-t border-gray-200 dark:border-slate-700"><button onclick="showAdminLogin()" class="text-xs text-blue-600 dark:text-blue-400 hover:underline cursor-pointer font-medium">Hubungi Admin untuk mendapatkan Kode</button>
+    <div class="mt-4 pt-4 border-t border-gray-200 dark:border-slate-700"><button onclick="showAdminLogin()" class="text-xs text-blue-600 dark:text-blue-400 hover:underline cursor-pointer font-medium">Versi Beta-X9. Hubungi Admin untuk mendapatkan Kode</button>
     </div>
    </div>
    <p id="footer-text" class="text-gray-400 text-xs mt-6">©Moidea-Lybra 2026</p>
   </div>
-  
   <div id="page-dashboard" class="h-full hidden p-4 max-w-4xl mx-auto w-full fade-in">
    <div class="flex items-center justify-between mb-4 no-print">
     <div>
-     <h2 class="text-lg font-bold text-blue-900 dark:text-white">Dashboard PKL Jakarta Intercultural School</h2>
+     <h2 class="text-lg font-bold text-blue-900 dark:text-white">Dashboard PKL</h2>
      <p id="user-info" class="text-xs font-medium text-gray-500 dark:text-slate-400"></p>
     </div><button onclick="handleLogout()" class="btn-3d btn-3d-danger text-xs"> <i data-lucide="log-out" class="w-4 h-4"></i> Keluar </button>
    </div>
@@ -306,64 +293,49 @@
     <div id="izin-section" style="display:none" class="mb-4 mt-4 fade-in"><label class="block text-xs font-bold text-gray-600 dark:text-slate-300 mb-2">Keterangan Izin</label> <textarea id="izin-input" rows="3" class="input-field" placeholder="Tuliskan alasan lengkap tidak masuk PKL..."></textarea> <button onclick="submitIzin()" class="btn-3d btn-3d-warning mt-2">Kirim Surat Izin</button>
     </div>
    </div>
-
-    <!-- Print Area untuk Siswa -->
-  <div id="print-area-student" style="display:none;">
-     <div style="text-align:center; margin-bottom:20px;">
-      <img src="LOGO NGLIPAR.png" style="width:60px; height:60px; object-fit:contain; margin-bottom:10px;">
-      <p style="font-size:11px; font-weight:bold; color:#1e3a5f; margin:0;">PEMERINTAH DAERAH DAERAH ISTIMEWA YOGYAKARTA</p>
-      <p style="font-size:13px; font-weight:bold; color:#1e3a5f; margin:5px 0;">SMK NEGERI 1 NGLIPAR</p>
-      <p style="font-size:10px; color:#666; margin:0;">Jl. Tentara Pelajar, Nglipar, Gunungkidul</p>
-      <p style="font-size:10px; color:#666; margin:0;">Daerah Istimewa Yogyakarta 55881</p>
-      <hr style="border:1px solid #1e3a5f; margin:10px 0;">
+   <div class="card mb-4">
+    <div class="flex items-center justify-between mb-4">
+     <h3 class="font-bold text-blue-950 dark:text-white text-sm flex items-center gap-2 no-print"><i data-lucide="history" class="w-5 h-5 text-blue-600"></i> Riwayat Presensi</h3><button onclick="printHistory()" class="btn-3d btn-3d-primary text-xs no-print"> <i data-lucide="printer" class="w-4 h-4"></i> Cetak Laporan </button>
+    </div>
+    <div id="print-header" style="display:none">
+     <div style="text-align:center;margin-bottom:20px;border-bottom:3px double #1e3a5f;padding-bottom:16px">
+      <h2 style="font-size:16px;font-weight:bold;margin:0">LAPORAN KEGIATAN PRAKTIK KERJA INDUSTRI</h2>
+      <p style="font-size:13px;margin:4px 0" id="print-school">SMK NEGERI 1 NGLIPAR</p>
+      <p style="font-size:12px;color:#666" id="print-user-info"></p>
      </div>
-
-     <div style="text-align:center; margin-bottom:20px;">
-      <h2 style="font-size:14px; font-weight:bold; margin:0; color:#1e3a5f;">LAPORAN PRESENSI PRAKTIK KERJA INDUSTRI</h2>
-      <p id="print-student-header" style="font-size:11px; margin:8px 0; color:#333;"></p>
-     </div>
-
-     <div style="margin-bottom:15px; font-size:10px;">
-      <p style="margin:3px 0;"><strong>Nama:</strong> <span id="print-nama"></span></p>
-      <p style="margin:3px 0;"><strong>Kelas:</strong> <span id="print-kelas"></span></p>
-      <p style="margin:3px 0;"><strong>Perusahaan:</strong> <span id="print-perusahaan"></span></p>
-      <p style="margin:3px 0;"><strong>Periode:</strong> <span id="print-periode"></span></p>
-     </div>
-
-     <table id="print-student-table" style="width:100%; border-collapse:collapse; font-size:9px; margin-bottom:20px;">
+    </div>
+    <div class="overflow-x-auto">
+     <table id="history-table">
       <thead>
-       <tr style="background-color:#1e3a5f; color:white;">
-        <th style="border:1px solid #333; padding:6px; text-align:center; font-weight:bold;">No</th>
-        <th style="border:1px solid #333; padding:6px; text-align:center; font-weight:bold;">Tanggal</th>
-        <th style="border:1px solid #333; padding:6px; text-align:center; font-weight:bold;">Waktu</th>
-        <th style="border:1px solid #333; padding:6px; text-align:center; font-weight:bold;">Status</th>
-        <th style="border:1px solid #333; padding:6px; text-align:left; font-weight:bold;">Kegiatan</th>
-        <th style="border:1px solid #333; padding:6px; text-align:center; font-weight:bold;">Koordinat</th>
+       <tr>
+        <th>Waktu</th>
+        <th>Status</th>
+        <th>Kegiatan</th>
+        <th>Koordinat</th>
        </tr>
       </thead>
-      <tbody id="print-student-body"></tbody>
+      <tbody id="history-body"></tbody>
      </table>
-
-     <div style="margin-top:30px; display:flex; justify-content:space-between; padding:0 20px;">
-      <div style="text-align:center; width:30%;">
-       <p style="font-size:10px; margin:0; font-weight:bold;">Pembimbing Industri</p>
-       <div style="height:60px; margin-top:10px;"></div>
-       <p style="font-size:9px; margin:0; border-top:1px solid #333; padding-top:4px;">__________________</p>
-       <p id="print-mentor-name" style="font-size:9px; margin:2px 0;"></p>
+    </div>
+    <div id="print-footer" style="display:none">
+     <div style="margin-top:40px;display:flex;justify-content:space-between;padding:0 40px">
+      <div style="text-align:center">
+       <p style="font-size:12px">Pembimbing Industri</p>
+       <div style="height:60px"></div>
+       <p style="font-size:12px;border-top:1px solid #333;padding-top:4px">________________________</p>
       </div>
-      <div style="text-align:center; width:30%;">
-       <p style="font-size:10px; margin:0; font-weight:bold;">Peserta PKL</p>
-       <div style="height:60px; margin-top:10px;"></div>
-       <p style="font-size:9px; margin:0; border-top:1px solid #333; padding-top:4px;">__________________</p>
-       <p style="font-size:9px; margin:2px 0;" id="print-student-name"></p>
+      <div style="text-align:center">
+       <p style="font-size:12px">Peserta PKL</p>
+       <div style="height:60px"></div>
+       <p style="font-size:12px;border-top:1px solid #333;padding-top:4px" id="print-signature-name">________________________</p>
       </div>
      </div>
     </div>
-
-    <!-- Display Table -->
+   </div>
+  </div>
   <div id="page-admin" class="h-full hidden p-4 max-w-5xl mx-auto w-full fade-in">
    <div class="flex items-center justify-between mb-4 no-print">
-    <h2 class="text-lg font-bold text-blue-900 dark:text-white">Admin Panel Jakarta Intercultural School</h2><button onclick="handleLogout()" class="btn-3d btn-3d-danger text-xs no-print"> <i data-lucide="log-out" class="w-4 h-4"></i> Keluar </button>
+    <h2 class="text-lg font-bold text-blue-900 dark:text-white">Admin Panel</h2><button onclick="handleLogout()" class="btn-3d btn-3d-danger text-xs no-print"> <i data-lucide="log-out" class="w-4 h-4"></i> Keluar </button>
    </div>
    <div class="flex gap-2 mb-4 flex-wrap no-print"><button onclick="switchAdminTab('add')" class="tab-btn active" id="tab-add">Tambah Peserta</button> <button onclick="switchAdminTab('report')" class="tab-btn" id="tab-report">Laporan Peserta</button>
    </div>
@@ -416,16 +388,16 @@
      <table style="width:100%;border:none;margin-bottom:10px">
       <tbody>
        <tr>
-        <td style="width:90px;text-align:center;border:none"><img src="LOGO JIS.png" style="width:70px" onerror="this.style.background='#e5e7eb';"></td>
+        <td style="width:90px;text-align:center;border:none"><img src="LOGO NGLIPAR.png" style="width:70px" onerror="this.style.background='#e5e7eb';"></td>
         <td style="text-align:center;border:none">
          <div style="font-size:14px;font-weight:bold">
           PEMERINTAH DAERAH DAERAH ISTIMEWA YOGYAKARTA
          </div>
          <div style="font-size:16px;font-weight:bold">
-          Jakarta Intercultural School
+          SMK NEGERI 1 NGLIPAR
          </div>
          <div style="font-size:12px">
-          Pondok Indah, Jakarta Selatan
+          Gunungkidul, Daerah Istimewa Yogyakarta
          </div>
          <div style="font-size:18px;font-weight:bold;margin-top:8px">
           LAPORAN REKAP PRESENSI PKL
@@ -460,61 +432,25 @@
     <div class="flex flex-wrap justify-between items-center gap-2 mb-3 no-print mt-3"><button onclick="printAdminReport()" class="btn-3d btn-3d-primary"> <i data-lucide="printer"></i> Cetak Laporan </button> <button onclick="askResetAllData()" class="btn-3d btn-3d-danger"> <i data-lucide="trash-2"></i> Hapus Semua Data </button>
     </div>
    </div>
-
-      <!-- Print Area untuk Admin --> 
-   <!-- Print Area untuk Admin -->
-    <div id="print-area-admin" style="display:none; margin-top:20px;">
-     <div style="text-align:center; margin-bottom:20px;">
-      <img src="LOGO NGLIPAR.png" style="width:60px; height:60px; object-fit:contain; margin-bottom:10px;">
-      <p style="font-size:11px; font-weight:bold; color:#1e3a5f; margin:0;">PEMERINTAH DAERAH DAERAH ISTIMEWA YOGYAKARTA</p>
-      <p style="font-size:13px; font-weight:bold; color:#1e3a5f; margin:5px 0;">SMK NEGERI 1 NGLIPAR</p>
-      <p style="font-size:10px; color:#666; margin:0;">Jl. Tentara Pelajar, Nglipar, Gunungkidul</p>
-      <p style="font-size:10px; color:#666; margin:0;">Daerah Istimewa Yogyakarta 55881</p>
-      <hr style="border:1px solid #1e3a5f; margin:10px 0;">
+   <div id="print-area-admin" style="display:none;">
+    <div id="print-table-container"></div>
+    <div id="admin-print-footer"></div>
+   </div>
+   <div id="admin-print-footer" style="display:none">
+    <div style="margin-top:60px;display:flex;justify-content:space-between">
+     <div style="text-align:center;width:40%">
+      <p>Admin PKL</p><br><br><br>
+      <p id="print-admin-name"></p>
+      <p id="print-admin-nip"></p>
      </div>
-
-     <div style="text-align:center; margin-bottom:15px;">
-      <h2 style="font-size:12px; font-weight:bold; margin:0; color:#1e3a5f;">DATA PESERTA PRAKTIK KERJA INDUSTRI TAHUN 2026</h2>
-     </div>
-
-     <table id="print-admin-table" style="width:100%; border-collapse:collapse; font-size:8px;">
-      <thead>
-       <tr style="background-color:#1e3a5f; color:white;">
-        <th style="border:1px solid #333; padding:4px; text-align:center; font-weight:bold;">No</th>
-        <th style="border:1px solid #333; padding:4px; text-align:left; font-weight:bold;">Nama</th>
-        <th style="border:1px solid #333; padding:4px; text-align:center; font-weight:bold;">Kelas</th>
-        <th style="border:1px solid #333; padding:4px; text-align:center; font-weight:bold;">HP</th>
-        <th style="border:1px solid #333; padding:4px; text-align:left; font-weight:bold;">Perusahaan</th>
-        <th style="border:1px solid #333; padding:4px; text-align:center; font-weight:bold;">Koordinat</th>
-        <th style="border:1px solid #333; padding:4px; text-align:center; font-weight:bold;">Kode</th>
-        <th style="border:1px solid #333; padding:4px; text-align:center; font-weight:bold;">Mulai</th>
-        <th style="border:1px solid #333; padding:4px; text-align:center; font-weight:bold;">Selesai</th>
-        <th style="border:1px solid #333; padding:4px; text-align:center; font-weight:bold;">Status</th>
-        <th style="border:1px solid #333; padding:4px; text-align:center; font-weight:bold;">Kegiatan</th>
-        <th style="border:1px solid #333; padding:4px; text-align:center; font-weight:bold;">Presensi</th>
-        <th style="border:1px solid #333; padding:4px; text-align:center; font-weight:bold;">Jarak</th>
-        <th style="border:1px solid #333; padding:4px; text-align:center; font-weight:bold;">Ket</th>
-       </tr>
-      </thead>
-      <tbody id="print-admin-body"></tbody>
-     </table>
-     
-    <div style="margin-top:25px; display:flex; justify-content:space-between; padding:0 30px;">
-      <div style="text-align:center; width:25%;">
-       <p style="font-size:9px; margin:0; font-weight:bold;">Kepala Sekolah</p>
-       <div style="height:50px; margin-top:8px;"></div>
-       <p style="font-size:8px; margin:0; border-top:1px solid #333; padding-top:3px;">__________________</p>
-      </div>
-      <div style="text-align:center; width:25%;">
-       <p style="font-size:9px; margin:0; font-weight:bold;">Admin PKL</p>
-       <div style="height:50px; margin-top:8px;"></div>
-       <p style="font-size:8px; margin:0; border-top:1px solid #333; padding-top:3px;">__________________</p>
-      </div>
+     <div style="text-align:center;width:40%">
+      <p>Kepala Sekolah</p><br><br><br>
+      <p id="print-kepsek-name"></p>
+      <p id="print-kepsek-nip"></p>
      </div>
     </div>
    </div>
   </div>
-  
   <p class="text-center text-gray-400 text-xs mt-8 mb-6">©Moidea-Lybra 2026</p>
   <script>
 // ===================== STATE MANAGEMENT =====================
@@ -643,7 +579,7 @@ const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyVdrqDBJOuo1dd
 
 const defaultConfig = {
     app_title: 'Presensi Praktik Kerja Industri',
-    school_name: 'Pondok Indah, Jakarta Selatan',
+    school_name: 'SMK NEGERI 1 NGLIPAR',
     footer_text: '©Moidea-Lybra 2026',
     background_color: '#f0f4f8',
     surface_color: '#ffffff',
@@ -1143,77 +1079,6 @@ function renderHistory() {
     });
 }
 
-// ==================== PRINT STUDENT ====================
-function printStudentReport() {
-    const mentorName = prompt('Masukkan nama Pembimbing Industri:', 'Pembimbing');
-    if (!mentorName) return;
-
-    if (!currentUser) return;
-    const history = getHistory(currentUser.code);
-
-    document.getElementById('print-nama').textContent = currentUser.nama;
-    document.getElementById('print-kelas').textContent = currentUser.kelas;
-    document.getElementById('print-perusahaan').textContent = currentUser.perusahaan;
-    document.getElementById('print-periode').textContent = `${currentUser.mulai} s/d ${currentUser.selesai}`;
-    document.getElementById('print-student-name').textContent = currentUser.nama;
-    document.getElementById('print-mentor-name').textContent = mentorName;
-
-    const tbody = document.getElementById('print-student-body');
-    tbody.innerHTML = '';
-    history.forEach((h, idx) => {
-        const tr = tbody.insertRow();
-        tr.innerHTML = `
-            <td style="border:1px solid #333; padding:4px; text-align:center;">${idx + 1}</td>
-            <td style="border:1px solid #333; padding:4px; text-align:center;">${h.date}</td>
-            <td style="border:1px solid #333; padding:4px; text-align:center;">${h.time}</td>
-            <td style="border:1px solid #333; padding:4px; text-align:center;">${h.status}</td>
-            <td style="border:1px solid #333; padding:4px; text-align:left;">${h.kegiatan || '-'}</td>
-            <td style="border:1px solid #333; padding:4px; text-align:center; font-size:8px;">${h.gps}</td>
-        `;
-    });
-
-    document.getElementById('print-area-student').style.display = 'block';
-    setTimeout(() => {
-        window.print();
-        document.getElementById('print-area-student').style.display = 'none';
-    }, 500);
-}
-
-// ==================== PRINT ADMIN ====================
-function printAdminReport() {
-    const list = getPesertaList();
-
-    const tbody = document.getElementById('print-admin-body');
-    tbody.innerHTML = '';
-    
-    list.forEach((peserta, idx) => {
-        const tr = tbody.insertRow();
-        tr.innerHTML = `
-            <td style="border:1px solid #333; padding:3px; text-align:center;">${idx + 1}</td>
-            <td style="border:1px solid #333; padding:3px; text-align:left;">${peserta.nama}</td>
-            <td style="border:1px solid #333; padding:3px; text-align:center;">${peserta.kelas}</td>
-            <td style="border:1px solid #333; padding:3px; text-align:center;">${peserta.hp}</td>
-            <td style="border:1px solid #333; padding:3px; text-align:left;">${peserta.perusahaan}</td>
-            <td style="border:1px solid #333; padding:3px; text-align:center; font-size:7px;">${peserta.koordinat || '-'}</td>
-            <td style="border:1px solid #333; padding:3px; text-align:center;">${peserta.code}</td>
-            <td style="border:1px solid #333; padding:3px; text-align:center;">${peserta.mulai}</td>
-            <td style="border:1px solid #333; padding:3px; text-align:center;">${peserta.selesai}</td>
-            <td style="border:1px solid #333; padding:3px; text-align:center;">PESERTA</td>
-            <td style="border:1px solid #333; padding:3px; text-align:center;">-</td>
-            <td style="border:1px solid #333; padding:3px; text-align:center;">-</td>
-            <td style="border:1px solid #333; padding:3px; text-align:center;">-</td>
-            <td style="border:1px solid #333; padding:3px; text-align:center;">-</td>
-        `;
-    });
-
-    document.getElementById('print-area-admin').style.display = 'block';
-    setTimeout(() => {
-        window.print();
-        document.getElementById('print-area-admin').style.display = 'none';
-    }, 500);
-}
-
-   
 function printHistory() {
     document.getElementById('print-header').style.display = 'block';
     document.getElementById('print-footer').style.display = 'block';
@@ -1366,7 +1231,7 @@ function shareWhatsApp() {
         nomor = '62' + nomor.substring(1);
     }
 
-    const pesan = encodeURIComponent(`Selamat, Anda sudah bisa melaksanakan Praktik Kerja Lapangan.\n\nBerikut kode login Presensi PKL Anda:\n\n*${code}*\n\nSilakan login pada aplikasi Presensi PKL menggunakan kode tersebut.\n\nPondok Indah, Jakarta Selatan`);
+    const pesan = encodeURIComponent(`Selamat, Anda sudah bisa melaksanakan Praktik Kerja Lapangan.\n\nBerikut kode login Presensi PKL Anda:\n\n*${code}*\n\nSilakan login pada aplikasi Presensi PKL menggunakan kode tersebut.\n\nSMKN 1 Nglipar`);
     window.open(`https://wa.me/${nomor}?text=${pesan}`, '_blank');
 }
 
