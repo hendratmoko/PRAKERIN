@@ -189,52 +189,45 @@
     .tab-btn { padding: 8px 16px; border-radius: 10px; cursor: pointer; font-weight: 600; font-size: 13px; transition: all 0.2s; border: none; background: #e2e8f0; color: #4a5568; }
     .tab-btn.active { background: #1e3a5f; color: white; box-shadow: 0 4px 12px rgba(30,58,95,0.15); }
 
-    @media print {
-    .no-print {
-        display: none !important;
+   @media print {
+
+    .no-print{
+        display:none !important;
     }
 
-    body {
-        background: white !important;
+    body{
+        background:#fff !important;
     }
 
-    #print-header,
-    #history-table,
-    #print-footer {
-        display: block !important;
-        visibility: visible !important;
+    body *{
+        visibility:hidden;
     }
 
-    body * {
-        visibility: hidden;
-    }
-
+    #print-area-admin,
+    #print-area-admin *,
     #print-header,
     #print-header *,
     #history-table,
     #history-table *,
     #print-footer,
-    #print-footer * {
-        visibility: visible;
+    #print-footer *{
+        visibility:visible;
     }
 
-    #print-header {
-        position: relative;
+    #print-area-admin{
+        position:absolute;
+        left:0;
+        top:0;
+        width:100%;
     }
 
-    #history-table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 11px;
-    }
-
-    #history-table th,
-    #history-table td {
-        border: 1px solid #000;
-        padding: 5px;
+    #print-header,
+    #history-table,
+    #print-footer{
+        position:relative;
     }
 }
-
+   
 @page {
     size: A4 portrait;
     margin: 15mm;
