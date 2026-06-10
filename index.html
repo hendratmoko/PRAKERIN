@@ -315,42 +315,57 @@
     <div class="flex items-center justify-between mb-4">
      <h3 class="font-bold text-blue-950 dark:text-white text-sm flex items-center gap-2 no-print"><i data-lucide="history" class="w-5 h-5 text-blue-600"></i> Riwayat Presensi</h3><button onclick="printHistory()" class="btn-3d btn-3d-primary text-xs no-print"> <i data-lucide="printer" class="w-4 h-4"></i> Cetak Laporan </button>
     </div>
-    <div id="print-header" style="display:none">
-     <div style="text-align:center;margin-bottom:20px;border-bottom:3px double #1e3a5f;padding-bottom:16px">
-      <h2 style="font-size:16px;font-weight:bold;margin:0">LAPORAN KEGIATAN PRAKTIK KERJA INDUSTRI</h2>
-      <p style="font-size:13px;margin:4px 0" id="print-school">SMK NEGERI 1 NGLIPAR</p>
-      <p style="font-size:12px;color:#666" id="print-user-info"></p>
+
+      <!-- Print Area untuk Siswa -->
+    <div id="print-area-student" style="display:none;">
+     <div style="text-align:center; margin-bottom:20px;">
+      <img src="LOGO NGLIPAR.png" style="width:60px; height:60px; object-fit:contain; margin-bottom:10px;">
+      <p style="font-size:11px; font-weight:bold; color:#1e3a5f; margin:0;">PEMERINTAH DAERAH DAERAH ISTIMEWA YOGYAKARTA</p>
+      <p style="font-size:13px; font-weight:bold; color:#1e3a5f; margin:5px 0;">SMK NEGERI 1 NGLIPAR</p>
+      <p style="font-size:10px; color:#666; margin:0;">Jl. Tentara Pelajar, Nglipar, Gunungkidul</p>
+      <p style="font-size:10px; color:#666; margin:0;">Daerah Istimewa Yogyakarta 55881</p>
+      <hr style="border:1px solid #1e3a5f; margin:10px 0;">
      </div>
-    </div>
-    <div class="overflow-x-auto">
-     <table id="history-table">
+     <div style="text-align:center; margin-bottom:20px;">
+      <h2 style="font-size:14px; font-weight:bold; margin:0; color:#1e3a5f;">LAPORAN PRESENSI PRAKTIK KERJA INDUSTRI</h2>
+      <p id="print-student-header" style="font-size:11px; margin:8px 0; color:#333;"></p>
+     </div>
+     <div style="margin-bottom:15px; font-size:10px;">
+      <p style="margin:3px 0;"><strong>Nama:</strong> <span id="print-nama"></span></p>
+      <p style="margin:3px 0;"><strong>Kelas:</strong> <span id="print-kelas"></span></p>
+      <p style="margin:3px 0;"><strong>Perusahaan:</strong> <span id="print-perusahaan"></span></p>
+      <p style="margin:3px 0;"><strong>Periode:</strong> <span id="print-periode"></span></p>
+     </div>
+     <table id="print-student-table" style="width:100%; border-collapse:collapse; font-size:9px; margin-bottom:20px;">
       <thead>
-       <tr>
-        <th>Waktu</th>
-        <th>Status</th>
-        <th>Kegiatan</th>
-        <th>Koordinat</th>
+       <tr style="background-color:#1e3a5f; color:white;">
+        <th style="border:1px solid #333; padding:6px; text-align:center; font-weight:bold;">No</th>
+        <th style="border:1px solid #333; padding:6px; text-align:center; font-weight:bold;">Tanggal</th>
+        <th style="border:1px solid #333; padding:6px; text-align:center; font-weight:bold;">Waktu</th>
+        <th style="border:1px solid #333; padding:6px; text-align:center; font-weight:bold;">Status</th>
+        <th style="border:1px solid #333; padding:6px; text-align:left; font-weight:bold;">Kegiatan</th>
+        <th style="border:1px solid #333; padding:6px; text-align:center; font-weight:bold;">Koordinat</th>
        </tr>
       </thead>
-      <tbody id="history-body"></tbody>
+      <tbody id="print-student-body"></tbody>
      </table>
-    </div>
-    <div id="print-footer" style="display:none">
-     <div style="margin-top:40px;display:flex;justify-content:space-between;padding:0 40px">
-      <div style="text-align:center">
-       <p style="font-size:12px">Pembimbing Industri</p>
-       <div style="height:60px"></div>
-       <p style="font-size:12px;border-top:1px solid #333;padding-top:4px">________________________</p>
+     <div style="margin-top:30px; display:flex; justify-content:space-between; padding:0 20px;">
+      <div style="text-align:center; width:30%;">
+       <p style="font-size:10px; margin:0; font-weight:bold;">Pembimbing Industri</p>
+       <div style="height:60px; margin-top:10px;"></div>
+       <p style="font-size:9px; margin:0; border-top:1px solid #333; padding-top:4px;">__________________</p>
+       <p id="print-mentor-name" style="font-size:9px; margin:2px 0;"></p>
       </div>
-      <div style="text-align:center">
-       <p style="font-size:12px">Peserta PKL</p>
-       <div style="height:60px"></div>
-       <p style="font-size:12px;border-top:1px solid #333;padding-top:4px" id="print-signature-name">________________________</p>
+      <div style="text-align:center; width:30%;">
+       <p style="font-size:10px; margin:0; font-weight:bold;">Peserta PKL</p>
+       <div style="height:60px; margin-top:10px;"></div>
+       <p style="font-size:9px; margin:0; border-top:1px solid #333; padding-top:4px;">__________________</p>
+       <p style="font-size:9px; margin:2px 0;" id="print-student-name"></p>
       </div>
      </div>
     </div>
-   </div>
-  </div>
+
+  
   <div id="page-admin" class="h-full hidden p-4 max-w-5xl mx-auto w-full fade-in">
    <div class="flex items-center justify-between mb-4 no-print">
     <h2 class="text-lg font-bold text-blue-900 dark:text-white">Admin Panel</h2><button onclick="handleLogout()" class="btn-3d btn-3d-danger text-xs no-print"> <i data-lucide="log-out" class="w-4 h-4"></i> Keluar </button>
