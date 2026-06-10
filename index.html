@@ -189,50 +189,43 @@
     .tab-btn { padding: 8px 16px; border-radius: 10px; cursor: pointer; font-weight: 600; font-size: 13px; transition: all 0.2s; border: none; background: #e2e8f0; color: #4a5568; }
     .tab-btn.active { background: #1e3a5f; color: white; box-shadow: 0 4px 12px rgba(30,58,95,0.15); }
 
-   @media print {
+       @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; color: black !important; }
+            body::before { display: none !important; }
+            body * { visibility: hidden; }
+            #print-area-student, #print-area-student * { visibility: visible; }
+            #print-area-admin, #print-area-admin * { visibility: visible; }
+            #print-area-student {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: auto;
+                padding: 20mm;
+                margin: 0;
+                background: white;
+            }
+            #print-area-admin {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: auto;
+                padding: 20mm;
+                margin: 0;
+                background: white;
+            }
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
 
-    .no-print{
-        display:none !important;
-    }
-
-    body{
-        background:#fff !important;
-    }
-
-    body *{
-        visibility:hidden;
-    }
-
-    #print-area-admin,
-    #print-area-admin *,
-    #print-header,
-    #print-header *,
-    #history-table,
-    #history-table *,
-    #print-footer,
-    #print-footer *{
-        visibility:visible;
-    }
-
-    #print-area-admin{
-        position:absolute;
-        left:0;
-        top:0;
-        width:100%;
-    }
-
-    #print-header,
-    #history-table,
-    #print-footer{
-        position:relative;
-    }
-}
-   
-@page {
-    size: A4 portrait;
-    margin: 15mm;
-}
-       
+        @page {
+            size: A4 portrait;
+            margin: 15mm;
+        }
   </style>
   <style>body { box-sizing: border-box; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
