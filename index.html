@@ -232,37 +232,7 @@
     size: A4 portrait;
     margin: 15mm;
 }
-
-.header-cetak {
-  display: flex;
-  align-items: center; /* Membuat logo dan teks sejajar secara vertikal di tengah */
-  margin-bottom: 20px; /* Jarak antara header dengan konten di bawahnya */
-  border-bottom: 2px solid #000; /* Opsional: Garis tebal khas kop surat */
-  padding-bottom: 10px;
-}
-
-.logo-laporan {
-  width: 80px; /* Atur lebar logo sesuai kebutuhan */
-  height: auto; /* Menjaga proporsi logo agar tidak gepeng */
-  margin-right: 20px; /* Jarak antara logo dan teks di sebelahnya */
-}
-
-.teks-header {
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 1.5;
-  /* Jika ingin teksnya rata tengah sendiri di sisa ruang, aktifkan text-align: center; */
-}
-
-/* Pengaturan khusus saat dicetak (Print) */
-@media print {
-  .header-cetak {
-    /* Memastikan warna atau elemen background logo tercetak dengan baik */
-    print-color-adjust: exact;
-    -webkit-print-color-adjust: exact;
-  }
-}
-   
+       
   </style>
   <style>body { box-sizing: border-box; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
@@ -346,16 +316,6 @@
      <h3 class="font-bold text-blue-950 dark:text-white text-sm flex items-center gap-2 no-print"><i data-lucide="history" class="w-5 h-5 text-blue-600"></i> Riwayat Presensi</h3><button onclick="printHistory()" class="btn-3d btn-3d-primary text-xs no-print"> <i data-lucide="printer" class="w-4 h-4"></i> Cetak Laporan </button>
          <button onclick="handleLogout()" class="btn-3d btn-3d-danger text-xs"> <i data-lucide="log-out" class="w-4 h-4"></i> Keluar </button>
     </div>
-    
-    <div class="header-cetak">
-  <img src="logo-smk.png" alt="Logo SMK" class="logo-laporan">
-  <div class="teks-header">
-    LAPORAN KEGIATAN PRAKTIK KERJA INDUSTRI
-    SMK NEGERI 1 NGLIPAR
-  </div>
-</div>
-    
-    <!--
     <div id="print-header" style="display:none">
      <div style="text-align:center;margin-bottom:20px;border-bottom:3px double #1e3a5f;padding-bottom:16px">
       <h2 style="font-size:16px;font-weight:bold;margin:0">LAPORAN KEGIATAN PRAKTIK KERJA INDUSTRI</h2>
@@ -363,8 +323,6 @@
       <p style="font-size:12px;color:#666" id="print-user-info"></p>
      </div>
     </div>
-    -->
-    
     <div class="overflow-x-auto">
      <table id="history-table">
       <thead>
