@@ -1,0 +1,85 @@
+function doPost(e) {
+
+  const sheet = SpreadsheetApp
+    .openById("1A9zJC2ROfRCNz6FRONTM00xr3Ez-3V74H1S_-dcwtG8")
+    .getSheetByName("PKL1");
+
+  const data = JSON.parse(e.postData.contents);
+
+  sheet.appendRow([
+    data.tanggal || "",
+    data.waktu || "",
+    data.nama || "",
+    data.kelas || "",
+    data.hp || "",
+    data.perusahaan || "",
+    data.koordinatPerusahaan || "",
+    data.koordinatPresensi || "",
+    data.jarak || "",
+    data.status || "",
+    data.kegiatan || "",
+    data.mulai || "",
+    data.selesai || "",
+    data.code || ""
+  ]);
+
+  return ContentService
+    .createTextOutput(
+      JSON.stringify({
+        success: true
+      })
+    )
+    .setMimeType(
+      ContentService.MimeType.JSON
+    );
+}
+
+
+function doGet(e) {
+
+  const action = e.parameter.action;
+
+  const sheet = SpreadsheetApp
+    .openById("1A9zJC2ROfRCNz6FRONTM00xr3Ez-3V74H1S_-dcwtG8")
+    .getSheetByName("PKL1");
+
+  if (action === "getReport") {
+
+    const values = sheet.getDataRange().getValues();
+
+    values.shift();
+
+    const result = values.map(row => ({
+      tanggal: row[0],
+      waktu: row[1],
+      nama: row[2],
+      kelas: row[3],
+      hp: row[4],
+      perusahaan: row[5],
+      koordinatPerusahaan: row[6],
+      koordinatPresensi: row[7],
+      jarak: row[8],
+      status: row[9],
+      kegiatan: row[10],
+      mulai: row[11],
+      selesai: row[12],
+      code: row[13]
+    }));
+
+    return ContentService
+      .createTextOutput(
+        JSON.stringify(result)
+      )
+      .setMimeType(
+        ContentService.MimeType.JSON
+      );
+  }
+
+  return ContentService
+    .createTextOutput(
+      JSON.stringify([])
+    )
+    .setMimeType(
+      ContentService.MimeType.JSON
+    );
+}
